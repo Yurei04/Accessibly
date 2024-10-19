@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <title>Accessibly</title>
+</head>
+<body>
+    <div id="accessibly">
+        <h1>Welcome to Accessibly</h1>
+        
+        <div class="switch-container">
+            <span class="tooltip">(High-Contrast Mode)</span>
+            <label class="switch">
+                <input type="checkbox" id="contrast-switch">
+                <span class="slider"></span>
+            </label>
+            <span>Color Blind</span>
+        </div>
+
+        <div class="switch-container">
+            <span class="tooltip">(Font Size Adjuster)</span>
+            <label class="switch">
+                <input type="checkbox" id="font-size-switch">
+                <span class="slider"></span>
+            </label>
+            <span>Poor Vision</span>
+        </div>
+
+        <div class="switch-container">
+            <span class="tooltip">Font</span>
+            <label class="switch">
+                <input type="checkbox" id="dyslexic-font-switch">
+                <span class="slider"></span>
+            </label>
+            <span>Dyslexic-Friendly</span>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
