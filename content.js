@@ -15,10 +15,18 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 
     if (request.action === 'toggleDyslexicFont') {
-        console.log('Toggling dyslexic-friendly font:', request.state);
-        document.body.style.fontFamily = request.state ? "'OpenDyslexic', sans-serif" : '';
-        sendResponse({ status: 'Dyslexic font toggled' });
+        if (request.state) {
+            const style = document.createElement('style');
+            style.id = 'dyslexic-font';
+            style.textContent = "@font-face { font-family: 'OpenDyslexic'; src: url('path/to/font.woff2') format('woff2'); }";
+            document.head.appendChild(style);
+            document.body.style.fontFamily = "'OpenDyslexic', sans-serif";
+        } else {
+            document.getElementById('dyslexic-font')?.remove();
+            document.body.style.fontFamily = '';
+        }
     }
+    
 
     if (request.action === 'increaseTextSpacing') {
         console.log('Increasing text spacing:', request.state);

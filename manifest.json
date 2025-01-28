@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Accessibly",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Accessibility features for web browsing.",
     "permissions": [
         "activeTab",
