@@ -38,5 +38,13 @@ document.addEventListener('DOMContentLoaded', function () {
         executeScriptAndSendMessage('increaseTextSpacing', isChecked);
     });
 
-
+    // All effects reset button
+    document.getElementById('reset-button').addEventListener('click', function () {
+        console.log("Reverted");
+        document.getElementById('contrast-switch').checked = false;
+        document.getElementById('font-size-switch').checked = false;
+        document.getElementById('dyslexic-font-switch').checked = false;
+        document.getElementById('text-spacing-switch').checked = false;
+        executeScriptAndSendMessage('resetAllEffects');
+    })
 });
